@@ -71,23 +71,20 @@ function ShowData(data){
   speedMS.innerText = speed+"m/s";
   degree.innerText = `${Degree(deg)} ${deg}°`
   if(all <= 25){
-    document.body.style.backgroundImage = "url('Bg/25%.jpg')";
+    document.body.style.backgroundImage = "url('Bg/sunny.jpg')";
     document.body.style.backgroundSize = "cover";
   }
-  else if(all < 50 && all > 25){
-    document.body.style.backgroundImage = "url('Bg/50%.jpg')";
+  else if(all <= 50 && all > 25){
+    document.body.style.backgroundImage = "url('Bg/cloudy.jpg')";
     document.body.style.backgroundSize = "cover";
-    console.log(all)
   }
   else if(all <= 75 && all > 50){
-    document.body.style.backgroundImage = "url('Bg/75%.jpg')";
+    document.body.style.backgroundImage = "url('Bg/rainy.jpg')";
     document.body.style.backgroundSize = "cover";
-    console.log(all)
   }
   else if(all <= 100 && all > 75){
-    document.body.style.backgroundImage = "url('Bg/100%.jpg')";
+    document.body.style.backgroundImage = "url('Bg/heavyRain.jpg')";
     document.body.style.backgroundSize = "cover";
-    console.log(all)
   }
   console.log(data)
 }

@@ -47,11 +47,17 @@ body{
     font-family: 'Noto Sans KR', sans-serif;
     color: rgb(255, 255, 255);
     text-align: center;
+    text-shadow: 5px 5px #888888;
 }
 
 .status-logo{
     display: flex;
     justify-content: center;
+}
+
+#weather-logo{
+    box-shadow: 5px 5px 15px 5px #000000;
+    border-radius: 50px;
 }
 
 .temperature{
@@ -60,6 +66,7 @@ body{
     font-family: 'Noto Sans KR', sans-serif;
     color: rgb(255, 255, 255);
     text-align: center;
+    text-shadow: 3px 5px #888888;
 }
 
 .max-min-temp{
@@ -86,6 +93,7 @@ body{
 
 .feels_likes #desc{
     font-size: 2em;
+    text-shadow: 4px 3px #888888;
 }
 
 @media(max-width: 538px) {
