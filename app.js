@@ -42,7 +42,6 @@ searchBtn.addEventListener("click", function(){
         fetch(`${proxy}api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`)
         .then((response) => response.json())
         .then((data) => {
-            console.log(data)
             ShowData(data);
         });
     } catch (error) {
