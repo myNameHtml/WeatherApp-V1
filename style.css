@@ -45,7 +45,7 @@ body{
     font-size: 5em;
     font-weight: 1000;
     font-family: 'Noto Sans KR', sans-serif;
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
 }
 
@@ -58,7 +58,7 @@ body{
     font-size: 8em;
     font-weight: 1000;
     font-family: 'Noto Sans KR', sans-serif;
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
 }
 

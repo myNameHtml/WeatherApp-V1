@@ -54,34 +54,63 @@ input.addEventListener("keyup", function(){
 })
 
 function ShowData(data){
-    let {name} = data;
-    let {temp, feels_like, temp_min, temp_max} = data.main;
-    let {icon, description} = data.weather[0];
-    let {country} = data.sys;
-    let {deg, speed} = data.wind;
-    
-    city.innerText = name+" "+country;
-    logo.src = `https://openweathermap.org/img/wn/${icon}@4x.png`;
-    temperature.innerText = Math.round(temp)+"℃";
-    desc.innerText = description.toUpperCase();
-    feelsLike.innerText = "Feels like: "+Math.round(feels_like)+"℃";
-    maxTemp.innerText = "Min Temp: "+Math.round(temp_min)+"℃";
-    minTemp.innerText = "Max Temp: "+Math.round(temp_max)+"℃";
-    speedMS.innerText = speed+"m/s";
-    if(deg === 350 || deg === 360 || deg === 010){ degree.innerText = `N ${deg}°`}
-    else if(deg >= 20 && deg <= 30){ degree.innerText = `N/NE ${deg}°`}
-    else if(deg >= 40 && deg <= 50){ degree.innerText = `NE ${deg}°`}
-    else if(deg >= 60 && deg <= 70){ degree.innerText = `E/NE ${deg}°`}
-    else if(deg >= 80 && deg <= 100){ degree.innerText = `E ${deg}°`}
-    else if(deg >= 110 && deg <= 120){ degree.innerText = `E/SE ${deg}°`}
-    else if(deg >= 130 && deg <= 140){ degree.innerText = `SE ${deg}°`}
-    else if(deg >= 150 && deg <= 160){ degree.innerText = `S/SE ${deg}°`}
-    else if(deg >= 170 && deg <= 190){ degree.innerText = `S ${deg}°`}
-    else if(deg >= 200 && deg <= 210){ degree.innerText = `S/SW ${deg}°`}
-    else if(deg >= 220 && deg <= 230){ degree.innerText = `SW ${deg}°`}
-    else if(deg >= 240 && deg <= 250){ degree.innerText = `W/SW ${deg}°`}
-    else if(deg >= 260 && deg <= 280){ degree.innerText = `W ${deg}°`}
-    else if(deg >= 290 && deg <= 300){ degree.innerText = `W/NW ${deg}°`}
-    else if(deg >= 310 && deg <= 320){ degree.innerText = `NW ${deg}°`}
-    else if(deg >= 330 && deg <= 340){ degree.innerText = `N/NW ${deg}°`}
+  let {name} = data;
+  let {temp, feels_like, temp_min, temp_max} = data.main;
+  let {icon, description} = data.weather[0];
+  let {country} = data.sys;
+  let {all} = data.clouds;
+  let {deg, speed} = data.wind;
+
+  city.innerText = name+" "+country;
+  logo.src = `https://openweathermap.org/img/wn/${icon}@4x.png`;
+  temperature.innerText = Math.round(temp)+"℃";
+  desc.innerText = description.toUpperCase();
+  feelsLike.innerText = "Feels like: "+Math.round(feels_like)+"℃";
+  maxTemp.innerText = "Min Temp: "+Math.round(temp_min)+"℃";
+  minTemp.innerText = "Max Temp: "+Math.round(temp_max)+"℃";
+  speedMS.innerText = speed+"m/s";
+  degree.innerText = `${Degree(deg)} ${deg}°`
+  if(all <= 25){
+    document.body.style.backgroundImage = "url('Bg/25%.jpg')";
+    document.body.style.backgroundSize = "cover";
+  }
+  else if(all < 50 && all > 25){
+    document.body.style.backgroundImage = "url('Bg/50%.jpg')";
+    document.body.style.backgroundSize = "cover";
+    console.log(all)
+  }
+  else if(all <= 75 && all > 50){
+    document.body.style.backgroundImage = "url('Bg/75%.jpg')";
+    document.body.style.backgroundSize = "cover";
+    console.log(all)
+  }
+  else if(all <= 100 && all > 75){
+    document.body.style.backgroundImage = "url('Bg/100%.jpg')";
+    document.body.style.backgroundSize = "cover";
+    console.log(all)
+  }
+  console.log(data)
+}
+
+
+function Degree(deg){
+  if(deg === 350 || deg === 360 || deg === 010){ return "N"}
+  else if(deg >= 20 && deg <= 30){ return "N/NE"}
+  else if(deg >= 40 && deg <= 50){ return "NE"}
+  else if(deg >= 60 && deg <= 70){ return "E/NE"}
+  else if(deg >= 80 && deg <= 100){ return "E"}
+  else if(deg >= 110 && deg <= 120){ return "E/SE"}
+  else if(deg >= 130 && deg <= 140){ return "SE"}
+  else if(deg >= 150 && deg <= 160){ return "S/SE"}
+  else if(deg >= 170 && deg <= 190){ return "S"}
+  else if(deg >= 200 && deg <= 210){ return "S/SW"}
+  else if(deg >= 220 && deg <= 230){ return "SW"}
+  else if(deg >= 240 && deg <= 250){ return "W/SW"}
+  else if(deg >= 260 && deg <= 280){ return "W"}
+  else if(deg >= 290 && deg <= 300){ return "W/NW"}
+  else if(deg >= 310 && deg <= 320){ return "NW"}
+  else(deg >= 330 && deg <= 340)
+  { 
+    return "N/NW"
+  }
 }
