@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>KHS | WEATHER</title>
+</head>
+<body>
+    <div class="search-country">
+        <input id="input" tabindex="1" type="text" placeholder="City name" autocomplete="country-name">
+        <button id="searchBtn" tabindex="1">Search</button>
+    </div>
+
+    <div id="city">Linz</div>
+
+    <div class="status-logo">
+        <img id="weather-logo" alt="LOGO OF WEATHER STATUS">
+    </div>
+
+    <div class="temperature">
+        <p id="temp">Temperature</p>
+    </div>
+
+    <div class="feels_likes">
+        <p id="desc"></p>
+    </div>
+
+    <div class="feels_likes">
+        <p id="feelsLike">Feels like: 50℃</p>
+    </div>
+
+    <div class="max-min-temp">
+        <p id="max-temp">Max. Temperature: 100℃</p>
+        <p id="min-temp">Min. Temperature: 10℃</p>
+    </div>
+
+    <div class="max-min-temp">
+        <p id="speed">Speed</p>
+        <p id="deg">DEG</p>
+    </div>
+<script src="app.js"></script>
+</body>
+</html>
