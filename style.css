@@ -13,7 +13,8 @@
 }
 
 body{
-    background: linear-gradient(45deg, rgba(102,97,182,1) 0%, rgba(86,112,214,1) 35%, rgba(0,212,255,1) 100%);
+    background: url("Bg/sunny.jpg");
+    background-size: cover;
     height: 100vh;
 }
 
